@@ -1,0 +1,22 @@
+{% extends 'store/base.html' %}
+{% load static %}
+
+{% block content %}
+<h1 class="mt-3">Store page</h1>
+<a href="{% url 'cart' %}"><img src="{% static 'images/cart.svg' %}" width=50px></a>
+{% for cards in rows %}
+	<div class="row mb-5">
+		{% for item in cards %}
+			<div class="col-lg-4">
+				<div class="card__box">
+					<a class="badge badge-light mb-2" href="#"><h5 class="card__header">{{item}}</h5></a>
+					<a href="#"><img class="mb-3 card__image" src="{% static 'images/placeholder.png' %}"></a>
+					<button class="btn btn-outline-secondary card__button mr-2">Add to Cart</button>
+					<a class="btn btn-outline-success">View</a>
+					<h4 class="card__price">$20</h4>
+				</div>	
+			</div>
+		{% endfor %}
+	</div>
+{% endfor %}
+{% endblock content %}
