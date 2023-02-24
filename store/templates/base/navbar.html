@@ -16,7 +16,7 @@
 				<a href="{% url 'cart' %}">
 					<img id="cart-icon" src="{% static 'images/cart.svg' %}" width=30px>
 				</a>
-				<p id="cart-total">{{cart_total}}</p>
+				<p id="cart-total">{{order.get_item_number}}</p>
 			</div>
 			<form class="form-inline my-lg-0 my-2">
 				<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
