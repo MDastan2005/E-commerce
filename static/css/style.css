@@ -1,3 +1,7 @@
+.chg-quantity {
+    cursor: pointer;
+}
+
 .card__image {
 	display: block;
 	width: 100%;

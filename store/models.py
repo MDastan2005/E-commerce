@@ -42,7 +42,7 @@ class Order(models.Model):
 
     @property
     def get_item_number(self) -> int:
-        return len(self.orderitem_set.all())
+        return sum(order_item.quantity for order_item in self.orderitem_set.all())
 
     @property
     def get_total_price(self) -> int:

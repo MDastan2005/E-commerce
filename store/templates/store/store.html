@@ -10,7 +10,7 @@
 				<div class="card__box">
 					<a class="badge badge-light mb-2" style="display: block; overflow: hidden;" href="#"><h5>{{product.name}}</h5></a>
 					<a href="#"><img class="mb-3 card__image" src="{{product.imageURL}}"></a>
-					<button class="btn btn-outline-secondary card__button mr-2">Add to Cart</button>
+					<button data-product={{product.id}} data-action="add" class="btn btn-outline-secondary card__button mr-2 update-cart">Add to Cart</button>
 					<a class="btn btn-outline-success">View</a>
 					<h4 class="card__price">${{product.price | floatformat:2}}</h4>
 				</div>	

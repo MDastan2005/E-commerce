@@ -7,6 +7,28 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	{% include 'base/css.html' %}
 	<title>{% block title %}DEcom{% endblock title %}</title>
+
+	<script type="text/javascript">
+		let user = "{{request.user}}"
+
+		const getCookie = cname => {
+			let name = cname + "="
+			let decodedCookie = decodeURIComponent(document.cookie)
+			let ca = decodedCookie.split(';')
+			for(let i = 0; i < ca.length; i++) {
+			  	let c = ca[i]
+			  	while (c.charAt(0) == ' ') {
+					c = c.substring(1)
+				}
+			  	if (c.indexOf(name) == 0) {
+					return c.substring(name.length, c.length)
+			  	}
+			}
+			return "";
+		}
+
+		let csrftoken = getCookie('csrftoken')
+	</script>
 </head>
 <body>
 	{% include 'base/navbar.html' %}
